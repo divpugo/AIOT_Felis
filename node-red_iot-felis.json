@@ -1,0 +1,986 @@
+[
+    {
+        "id": "8c5acc7c30bd2353",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6d99c554254ccf0f",
+        "type": "function",
+        "z": "8c5acc7c30bd2353",
+        "name": "filter_action",
+        "func": "msg.payload = {\n    \"direction\": \"down\",\n    \"payload\": {\n        \"manager\": \"COM31\",\n        \"command\": \"sendData\",\n        \"fields\": {\n            \"macAddress\": \"00-17-0d-00-00-59-4d-36\",\n            \"priority\": 1,\n            \"srcPort\": 0xf0b8,\n            \"dstPort\": 0xf0b8,\n            \"options\": 0,\n            \"data\": [msg.payload],\n        }\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 740,
+        "wires": [
+            [
+                "e65e6b4c2b891f82",
+                "88af05cf8f9f3233"
+            ]
+        ]
+    },
+    {
+        "id": "29e741938c5960ef",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "GET_DOWN",
+        "group": "e03d4aa54302ce03",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "GET_DOWN",
+        "tooltip": "",
+        "color": "#D04F30",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-arrow-down",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 80,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "698f153f12527760",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "STAND_UP ",
+        "group": "e03d4aa54302ce03",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "STAND_UP ",
+        "tooltip": "",
+        "color": "#D68B26",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-arrow-up",
+        "payload": "2",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 120,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "b0ae567a9d179d04",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "CREEP_FORWARD",
+        "group": "e03d4aa54302ce03",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "CREEP_FORWARD",
+        "tooltip": "",
+        "color": "#88BEAC",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-arrow-forward",
+        "payload": "3",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 540,
+        "y": 160,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "e65e6b4c2b891f82",
+        "type": "mqtt out",
+        "z": "8c5acc7c30bd2353",
+        "name": "mqtt",
+        "topic": "aiotacademy",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a908ebdf68985a7e",
+        "x": 1250,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "10781ebcfab14003",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "CIRCLE_AROUND",
+        "group": "e03d4aa54302ce03",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "CIRCLE_AROUND",
+        "tooltip": "",
+        "color": "#D04F30",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-sync-alt",
+        "payload": "4",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 530,
+        "y": 200,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "52b103556fd96991",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "SQUAT_UP",
+        "group": "e03d4aa54302ce03",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "SQUAT_UP",
+        "tooltip": "",
+        "color": "#D68B26",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-arrow-up",
+        "payload": "6",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 240,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "94209f1d998cb6c8",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "TURN_ROLL",
+        "group": "e03d4aa54302ce03",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "TURN_ROLL",
+        "tooltip": "",
+        "color": "#88BEAC",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-undo",
+        "payload": "7",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 280,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "7b928369055d65c5",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "TURN_PITCH ",
+        "group": "e03d4aa54302ce03",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "TURN_PITCH ",
+        "tooltip": "",
+        "color": "#D04F30",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-exchange-alt",
+        "payload": "8",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 520,
+        "y": 320,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "8dee6fe635560b99",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "TURN_YAW",
+        "group": "e03d4aa54302ce03",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "TURN_YAW",
+        "tooltip": "",
+        "color": "#D68B26",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-redo",
+        "payload": "9",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 360,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "e9118c2851aaa594",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "THREE_AXIS_ROTATION",
+        "group": "e03d4aa54302ce03",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "THREE_AXIS_ROTATION",
+        "tooltip": "",
+        "color": "#88BEAC",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-arrows-alt",
+        "payload": "10",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 560,
+        "y": 400,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "5cf1dda94b67da42",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "PEE",
+        "group": "484f232616410c25",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "PEE",
+        "tooltip": "",
+        "color": "#88BEAC",
+        "bgcolor": "#9E67C9",
+        "className": "",
+        "icon": "fa-tint",
+        "payload": "11",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 490,
+        "y": 1320,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "edd060e877a95f66",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "SIT_DOWN",
+        "group": "e03d4aa54302ce03",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "SIT_DOWN",
+        "tooltip": "",
+        "color": "#D04F30",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-chair",
+        "payload": "12",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 440,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "db92dac20063eb18",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "WAVE1",
+        "group": "bea0dfa5eb050ee4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "WAVE1",
+        "tooltip": "",
+        "color": "#385B85",
+        "bgcolor": "#D04F30",
+        "className": "",
+        "icon": "fa-hand-paper",
+        "payload": "13",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 500,
+        "y": 560,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "fab766243b74727a",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "STRETCH",
+        "group": "8159c96df8b3e2c6",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "STRETCH",
+        "tooltip": "",
+        "color": "#88BEAC",
+        "bgcolor": "#D68B26",
+        "className": "",
+        "icon": "fa-expand-arrows-alt",
+        "payload": "14",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 1000,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "50d6a6d9e374e03d",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "WAVE2",
+        "group": "bea0dfa5eb050ee4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "WAVE2",
+        "tooltip": "",
+        "color": "#88BEAC",
+        "bgcolor": "#D04F30",
+        "className": "",
+        "icon": "fa-hand-peace",
+        "payload": "15",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 500,
+        "y": 600,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "2b9de3672bbc498e",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "SWING_LEFT_AND_RIGHT",
+        "group": "8159c96df8b3e2c6",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "SWING_LEFT_AND_RIGHT",
+        "tooltip": "",
+        "color": "#385B85",
+        "bgcolor": "#D68B26",
+        "className": "",
+        "icon": "fa-arrows-alt-h",
+        "payload": "16",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 560,
+        "y": 1040,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "fd877fe77e4f0c1f",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "BEGGING_FOR_FOOD",
+        "group": "2b4323ed72af9921",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "BEGGING_FOR_FOOD",
+        "tooltip": "",
+        "color": "#D04F30",
+        "bgcolor": "#88BEAC",
+        "className": "",
+        "icon": "fa-hand-holding-heart",
+        "payload": "17",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 550,
+        "y": 760,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "b8c0e8985fbfc4a0",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "LOOKING_FOR_FOOD",
+        "group": "2b4323ed72af9921",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "LOOKING_FOR_FOOD",
+        "tooltip": "",
+        "color": "#385B85",
+        "bgcolor": "#88BEAC",
+        "className": "",
+        "icon": "fa-search",
+        "payload": "18",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 550,
+        "y": 800,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "86aab6f3929db141",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "SHAKE_HANDS",
+        "group": "2b4323ed72af9921",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "SHAKE_HANDS",
+        "tooltip": "",
+        "color": "#D04F30",
+        "bgcolor": "#88BEAC",
+        "className": "",
+        "icon": "fa-handshake",
+        "payload": "19",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 530,
+        "y": 840,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "b8c32ef63f01c1ee",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "CHICKEN_HEAD",
+        "group": "2b4323ed72af9921",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "CHICKEN_HEAD",
+        "tooltip": "",
+        "color": "#385B85",
+        "bgcolor": "#88BEAC",
+        "className": "",
+        "icon": "fa-drumstick-bite",
+        "payload": "20",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 530,
+        "y": 880,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "02eeb65ec91fba1b",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "PUSH_UPS",
+        "group": "8159c96df8b3e2c6",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "PUSH_UPS",
+        "tooltip": "",
+        "color": "#385B85",
+        "bgcolor": "#D68B26",
+        "className": "",
+        "icon": "fa-level-up-alt",
+        "payload": "21",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 960,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "6a5b36e118fd055f",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "LOOK_AROUND",
+        "group": "8159c96df8b3e2c6",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "LOOK_AROUND",
+        "tooltip": "",
+        "color": "#88BEAC",
+        "bgcolor": "#D68B26",
+        "className": "",
+        "icon": "fa-eye",
+        "payload": "22",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 530,
+        "y": 1080,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "9f28959928e56b4f",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "DANCE",
+        "group": "bea0dfa5eb050ee4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "DANCE",
+        "tooltip": "",
+        "color": "#385B85",
+        "bgcolor": "#D04F30",
+        "className": "",
+        "icon": "fa-drum",
+        "payload": "23",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 500,
+        "y": 640,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "a346f1ed8df0af12",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "NAUGHTY",
+        "group": "bea0dfa5eb050ee4",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "NAUGHTY",
+        "tooltip": "",
+        "color": "#88BEAC",
+        "bgcolor": "#D04F30",
+        "className": "",
+        "icon": "fa-grin-tongue-wink",
+        "payload": "24",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 680,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "a8a226a97384e26a",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "CATCH_UP",
+        "group": "1fccc9cef3a11f4b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "CATCH_UP",
+        "tooltip": "",
+        "color": "#D04F30",
+        "bgcolor": "#90C226",
+        "className": "",
+        "icon": "fa-running",
+        "payload": "128",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 1160,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "232a63df15d954b2",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "CATCH",
+        "group": "1fccc9cef3a11f4b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "CATCH",
+        "tooltip": "",
+        "color": "#385B85",
+        "bgcolor": "#90C226",
+        "className": "",
+        "icon": "",
+        "payload": "130",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 500,
+        "y": 1240,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "0bf9f8e76318ab66",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "CAUGHT",
+        "group": "1fccc9cef3a11f4b",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "CATCH",
+        "tooltip": "",
+        "color": "#D68B26",
+        "bgcolor": "#90C226",
+        "className": "",
+        "icon": "fa-hand-paper",
+        "payload": "130",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 500,
+        "y": 1200,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "fbe2449a4b2e8951",
+        "type": "ui_button",
+        "z": "8c5acc7c30bd2353",
+        "name": "RESTORE DEFAULT POSTURE",
+        "group": "e03d4aa54302ce03",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "RESTORE DEFAULT POSTURE",
+        "tooltip": "",
+        "color": "#D68B26",
+        "bgcolor": "#385B85",
+        "className": "",
+        "icon": "fa-user-check",
+        "payload": "255",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 580,
+        "y": 480,
+        "wires": [
+            [
+                "6d99c554254ccf0f"
+            ]
+        ]
+    },
+    {
+        "id": "88af05cf8f9f3233",
+        "type": "debug",
+        "z": "8c5acc7c30bd2353",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1260,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "bf3d28149e996da5",
+        "type": "comment",
+        "z": "8c5acc7c30bd2353",
+        "name": "Movement Action",
+        "info": "",
+        "x": 520,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e1ab1660c2719238",
+        "type": "comment",
+        "z": "8c5acc7c30bd2353",
+        "name": "Playful Actions",
+        "info": "",
+        "x": 520,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "95f90f31c3f3ce83",
+        "type": "comment",
+        "z": "8c5acc7c30bd2353",
+        "name": "Interaction Actions",
+        "info": "",
+        "x": 530,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "1c86995f83e9745e",
+        "type": "comment",
+        "z": "8c5acc7c30bd2353",
+        "name": "Exercise Actions",
+        "info": "",
+        "x": 520,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "7fea479f6fc5d1a9",
+        "type": "comment",
+        "z": "8c5acc7c30bd2353",
+        "name": "Catch Actions",
+        "info": "",
+        "x": 510,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "4d6dc030b045dca1",
+        "type": "comment",
+        "z": "8c5acc7c30bd2353",
+        "name": "Fun Actions",
+        "info": "",
+        "x": 510,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "e03d4aa54302ce03",
+        "type": "ui_group",
+        "name": "Movement Actions",
+        "tab": "85bb04a85d9541ca",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a908ebdf68985a7e",
+        "type": "mqtt-broker",
+        "name": "mqtt",
+        "broker": "broker.mqttdashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "484f232616410c25",
+        "type": "ui_group",
+        "name": "Fun Actions",
+        "tab": "85bb04a85d9541ca",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bea0dfa5eb050ee4",
+        "type": "ui_group",
+        "name": "Playful Actions",
+        "tab": "85bb04a85d9541ca",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8159c96df8b3e2c6",
+        "type": "ui_group",
+        "name": "Exercise Actions",
+        "tab": "85bb04a85d9541ca",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2b4323ed72af9921",
+        "type": "ui_group",
+        "name": "Interaction Actions",
+        "tab": "85bb04a85d9541ca",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1fccc9cef3a11f4b",
+        "type": "ui_group",
+        "name": "Catch Actions",
+        "tab": "85bb04a85d9541ca",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "85bb04a85d9541ca",
+        "type": "ui_tab",
+        "name": "3A - IT ESIROI - 2023/2024 - PLAY WITH FELIS",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
