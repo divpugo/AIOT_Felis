@@ -4,7 +4,7 @@
   - Maxime SEMARD
   - Lise ROCHAT
   - Divya PUGO
-  - ALexia GAIDO--AMOROS
+  - Alexia GAIDO--AMOROS
 
 ## Supports Additionels
 ### Schema des fonctions du Dashboard
